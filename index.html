@@ -1,9 +1,800 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta name="description" content="Daksh Mavani — ECE engineer in the making, focused on VLSI, design verification, podcasting and running.">
+  <title>Daksh Mavani | Engineer, Creator, Runner</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f4f1e9;
+      --soft: #eae6dc;
+      --ink: #191b20;
+      --muted: #656a72;
+      --blue: #183e69;
+      --line: #d5d1c7;
+      --mono: "DM Mono", monospace;
+      --sans: "Manrope", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.75;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #477db5;
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100% - 44px));
+      margin: auto;
+    }
+
+    .mono, .eyebrow {
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 10px;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      min-height: 76px;
+      padding: 15px max(22px, calc((100vw - 1100px) / 2));
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .logo span { color: var(--blue); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    nav a:hover, .link:hover { color: var(--blue); }
+
+    .nav-contact {
+      border: 1px solid #b7b8b8;
+      padding: 8px 12px;
+    }
+
+    /* INTRODUCTION */
+
+    .hero {
+      min-height: 620px;
+      padding-top: 75px;
+      padding-bottom: 75px;
+      display: grid;
+      grid-template-columns: 1.1fr .8fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 5.5vw, 68px);
+      line-height: 1.12;
+      letter-spacing: -.07em;
+      margin: 25px 0;
+    }
+
+    h1 span, h2 em {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      color: var(--blue);
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 570px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 23px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 16px;
+      background: var(--blue);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .button:hover { background: #102d4d; }
+
+    .link {
+      border-bottom: 1px solid #b7b8b8;
+      padding-bottom: 4px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .hero-note {
+      margin-top: 42px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      color: var(--muted);
+      font: 10px var(--mono);
+    }
+
+    .portrait {
+      aspect-ratio: 4 / 5;
+      background: #e4e0d5;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .portrait-placeholder {
+      color: var(--blue);
+      padding: 25px;
+    }
+
+    .portrait-placeholder strong {
+      display: block;
+      font-size: 85px;
+      letter-spacing: -9px;
+      line-height: 1.2;
+    }
+
+    .portrait-placeholder small {
+      font: 10px var(--mono);
+      line-height: 2;
+    }
+
+    .portrait-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px;
+      background: rgba(244,241,233,.92);
+      font: 9px var(--mono);
+      letter-spacing: .08em;
+    }
+
+    /* INTRO STRIP */
+
+    .strip {
+      background: var(--soft);
+      border-block: 1px solid var(--line);
+      padding: 25px 0;
+    }
+
+    .strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .strip p { margin: 0; font-size: 14px; }
+    .strip strong { color: var(--blue); }
+
+    /* SHARED SECTION STYLES */
+
+    .section { padding-top: 95px; padding-bottom: 95px; }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 45px;
+      align-items: end;
+      margin-bottom: 45px;
+    }
+
+    h2 {
+      font-size: clamp(35px, 4vw, 49px);
+      line-height: 1.2;
+      letter-spacing: -.06em;
+      margin: 12px 0 0;
+    }
+
+    .summary {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ENGINEERING PROJECTS */
+
+    .project {
+      display: grid;
+      grid-template-columns: 45px 1fr 35px;
+      gap: 20px;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .project:last-child { border-bottom: 1px solid var(--line); }
+
+    .number {
+      font: 11px var(--mono);
+      color: var(--blue);
+    }
+
+    .project-type {
+      color: var(--muted);
+      font: 9px var(--mono);
+      letter-spacing: .08em;
+    }
+
+    h3 { line-height: 1.35; }
+
+    .project h3 {
+      font-size: 21px;
+      margin: 8px 0;
+      letter-spacing: -.04em;
+    }
+
+    .project p:not(.project-type) {
+      max-width: 720px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+    .tags span {
+      background: #e5e8e9;
+      border: 1px solid #d5dadd;
+      padding: 3px 8px;
+      font-size: 10px;
+      color: #35475b;
+    }
+
+    .project-arrow {
+      color: var(--blue);
+      font-size: 22px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 10px;
+      margin-top: 16px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      background: var(--blue);
+      color: var(--paper);
+      padding: 75px 0;
+    }
+
+    .skills .eyebrow { color: #c6d8e9; }
+    .skills h2 em { color: #c6d8e9; }
+
+    .skills-grid {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .skill {
+      border-top: 1px solid #66809a;
+      padding-top: 15px;
+    }
+
+    .skill h3 { font-size: 14px; margin: 7px 0; }
+    .skill p { font-size: 12px; color: #d1d8df; margin: 0; }
+
+    /* BACKGROUND & MILESTONES */
+
+    .milestone {
+      display: grid;
+      grid-template-columns: 125px 1fr;
+      gap: 25px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .milestone:last-child { border-bottom: 1px solid var(--line); }
+
+    .milestone-label {
+      font: 10px var(--mono);
+      color: var(--blue);
+    }
+
+    .milestone h3 { margin: 0 0 7px; font-size: 16px; }
+    .milestone p { margin: 0; font-size: 12px; color: var(--muted); }
+
+    /* BEYOND ENGINEERING */
+
+    .beyond { background: var(--soft); border-block: 1px solid var(--line); }
+
+    .beyond-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .side-card {
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .side-art {
+      min-height: 205px;
+      padding: 22px;
+      background: var(--blue);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .side-art.running-art {
+      background: #c8d3da;
+      color: var(--ink);
+    }
+
+    .side-art .eyebrow { color: #d7e5f3; }
+    .running-art .eyebrow { color: var(--blue); }
+
+    .art-title {
+      font-size: clamp(28px, 3vw, 39px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.07em;
+    }
+
+    .side-content { padding: 23px; }
+    .side-content h3 { margin: 8px 0; font-size: 21px; }
+    .side-content p:not(.eyebrow) { color: var(--muted); font-size: 12px; }
+
+    /* CURRENT FOCUS */
+
+    .now {
+      padding: 65px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .now-inner {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 35px;
+    }
+
+    .now h2 { font-size: 34px; margin: 0 0 12px; }
+    .now p:not(.eyebrow) { color: var(--muted); font-size: 12px; }
+
+    /* CONTACT */
+
+    .contact { padding-top: 95px; padding-bottom: 100px; }
+
+    .contact h2 { font-size: clamp(43px, 6vw, 70px); }
+    .contact > p:not(.eyebrow) { max-width: 530px; color: var(--muted); font-size: 13px; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    footer p { margin: 0; }
+
+    /* MOBILE LAYOUT */
+
+    @media (max-width: 700px) {
+      header { padding: 17px 22px; align-items: flex-start; }
+      nav { gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+      nav a { font-size: 10px; }
+      .nav-contact { padding: 5px 7px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 50px;
+        padding-bottom: 55px;
+      }
+
+      .portrait { max-width: 430px; width: 100%; margin: auto; }
+      .hero-note { margin-top: 30px; }
+
+      .section { padding-top: 70px; padding-bottom: 70px; }
+
+      .section-heading { grid-template-columns: 1fr; gap: 15px; }
+
+      .strip-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+
+      .project { grid-template-columns: 25px 1fr; gap: 12px; }
+      .project-arrow { display: none; }
+      .project h3 { font-size: 18px; }
+
+      .skills-grid { gap: 22px 16px; }
+
+      .milestone { grid-template-columns: 1fr; gap: 7px; }
+
+      .beyond-grid { grid-template-columns: 1fr; }
+
+      .now-inner { grid-template-columns: 1fr; gap: 12px; }
+      .now h2 { font-size: 30px; }
+
+      footer { flex-wrap: wrap; }
+    }
+
+    @media (max-width: 400px) {
+      header { flex-direction: column; }
+      nav { justify-content: flex-start; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .actions { gap: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello, world! Welcome to my free website.</h1>
+  <header>
+    <a class="logo" href="#home">DM<span>.</span></a>
+
+    <nav aria-label="Main navigation">
+      <a href="#engineering">Engineering</a>
+      <a href="#about">About</a>
+      <a href="#beyond">Beyond the lab</a>
+      <a class="nav-contact" href="#contact">Contact ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. INTRODUCTION -->
+    <section class="hero wrap" id="home">
+      <div>
+        <p class="eyebrow">ECE ENGINEERING · HYDERABAD, INDIA</p>
+
+        <h1>Curious by nature.<br><span>Building with intent.</span></h1>
+
+        <p class="hero-description">
+          I'm Daksh Mavani — an Electronics and Communication Engineering
+          student focused on VLSI and design verification. I enjoy understanding
+          how systems work, building things that test that understanding, and
+          sharing what I learn along the way.
+        </p>
+
+        <div class="actions">
+          <a class="button" href="#engineering">Explore my work ↘</a>
+          <a class="link" href="#contact">Let's connect ↗</a>
+        </div>
+
+        <p class="hero-note">RTL DESIGN · VERIFICATION · CONTINUOUS LEARNING</p>
+      </div>
+
+      <div class="portrait">
+        <div class="portrait-placeholder">
+          <strong>DM<span style="color:#183e69">.</span></strong>
+          <small>YOUR PHOTO GOES HERE<br>ADD IT WHEN YOU'RE READY</small>
+        </div>
+        <!-- Optional: add your photo later; instructions below. -->
+        <div class="portrait-caption">DAKSH MAVANI · ENGINEER / CREATOR / RUNNER</div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="wrap strip-inner">
+        <p class="eyebrow">THE DIRECTION</p>
+        <p>Working toward a career in <strong>VLSI design verification</strong> through fundamentals, hands-on practice, and curiosity.</p>
+      </div>
+    </section>
+
+    <!-- 2. ENGINEERING PROJECTS -->
+    <section class="section wrap" id="engineering">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / THE MAIN THREAD</p>
+          <h2>Engineering <em>in practice.</em></h2>
+        </div>
+        <p class="summary">
+          My focus is digital hardware, RTL design, verification, and
+          understanding open-source silicon workflows. This section will grow
+          as I document more projects and results.
+        </p>
+      </div>
+
+      <article class="project">
+        <span class="number">01</span>
+        <div>
+          <p class="project-type">RTL DESIGN / VERIFICATION</p>
+          <h3>Configurable FIFO Buffer</h3>
+          <p>
+            A digital-design project exploring FIFO behaviour, RTL simulation,
+            gate-level verification, and SystemVerilog assertions. Add your
+            actual design details, test scenarios, and results here.
+          </p>
+          <div class="tags">
+            <span>Verilog</span><span>SystemVerilog</span><span>SVA</span>
+          </div>
+        </div>
+        <a class="project-arrow" href="https://github.com/DaxMavani" aria-label="GitHub profile">↗</a>
+      </article>
+
+      <article class="project">
+        <span class="number">02</span>
+        <div>
+          <p class="project-type">OPEN-SOURCE SILICON</p>
+          <h3>RISC-V & RTL-to-GDS Exploration</h3>
+          <p>
+            Hands-on learning with open-source EDA tools and an ASIC design
+            flow. Document the stages you completed, challenges you faced,
+            and what you learned. This is a learning journey, not a claim of
+            completed tapeout.
+          </p>
+          <div class="tags">
+            <span>RISC-V</span><span>OpenROAD</span><span>Linux</span>
+          </div>
+        </div>
+        <a class="project-arrow" href="https://github.com/DaxMavani" aria-label="GitHub profile">↗</a>
+      </article>
+
+      <article class="project">
+        <span class="number">03</span>
+        <div>
+          <p class="project-type">VERIFICATION PRACTICE</p>
+          <h3>SystemVerilog Learning Lab</h3>
+          <p>
+            A growing collection of exercises and notes on testbenches,
+            assertions, simulation, debugging, and verification concepts.
+            Link specific examples when they are ready to share.
+          </p>
+          <div class="tags">
+            <span>SystemVerilog</span><span>Testbenches</span><span>Debugging</span>
+          </div>
+        </div>
+        <a class="project-arrow" href="https://github.com/DaxMavani" aria-label="GitHub profile">↗</a>
+      </article>
+
+      <p class="note">
+        These are starting descriptions. Before publishing, link each item to
+        the exact repository and ensure the wording matches the work completed.
+      </p>
+    </section>
+
+    <!-- 3. SKILLS -->
+    <section class="skills">
+      <div class="wrap">
+        <p class="eyebrow">02 / THE TOOLKIT</p>
+        <h2>Foundations first.<br><em>Then depth.</em></h2>
+
+        <div class="skills-grid">
+          <div class="skill">
+            <p class="eyebrow">01</p>
+            <h3>HDLs & RTL</h3>
+            <p>Verilog · SystemVerilog</p>
+          </div>
+          <div class="skill">
+            <p class="eyebrow">02</p>
+            <h3>Verification</h3>
+            <p>Testbenches · SVA · Simulation · Debugging</p>
+          </div>
+          <div class="skill">
+            <p class="eyebrow">03</p>
+            <h3>Engineering foundations</h3>
+            <p>Digital logic · Electronics · Computer architecture</p>
+          </div>
+          <div class="skill">
+            <p class="eyebrow">04</p>
+            <h3>Tools & workflows</h3>
+            <p>Git · Linux · Open-source EDA tools</p>
+          </div>
+        </div>
+
+        <p class="note" style="color:#d1d8df">
+          Skills reflect my learning and practice. I'll update this section as
+          I gain more hands-on experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. BACKGROUND -->
+    <section class="section wrap" id="about">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / THE BACKGROUND</p>
+          <h2>The journey <em>so far.</em></h2>
+        </div>
+        <p class="summary">
+          I'm studying Electronics and Communication Engineering at
+          St. Martin's Engineering College in Hyderabad. My goal is to
+          strengthen my digital design and verification skills through
+          practical work and consistent learning.
+        </p>
+      </div>
+
+      <article class="milestone">
+        <span class="milestone-label">EDUCATION</span>
+        <div>
+          <h3>B.Tech — Electronics & Communication Engineering</h3>
+          <p>St. Martin's Engineering College, Hyderabad · R22 regulation. Expected graduation: June 2027.</p>
+        </div>
+      </article>
+
+      <article class="milestone">
+        <span class="milestone-label">CERTIFICATION</span>
+        <div>
+          <h3>System Design with Verilog — NPTEL</h3>
+          <p>
+            Completed the course by Prof. Shaik Rafi Ahamed of IIT Guwahati.
+            Certificate reported as 65%, Elite category. Add your certificate
+            link if you want visitors to verify it.
+          </p>
+        </div>
+      </article>
+
+      <article class="milestone">
+        <span class="milestone-label">LEADERSHIP</span>
+        <div>
+          <h3>IEEE student activities</h3>
+          <p>
+            Involved in IEEE student-branch and Circuits and Systems Society
+            chapter planning, with technical-event ideas around VLSI,
+            embedded systems, and IoT. Add your exact title, dates, and
+            completed activities before publishing.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 5. PODCAST & RUNNING -->
+    <section class="beyond" id="beyond">
+      <div class="section wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 / OUTSIDE THE LAB</p>
+            <h2>Other ways I <em>learn.</em></h2>
+          </div>
+          <p class="summary">
+            Engineering is my main professional pursuit. Podcasting and running
+            are the side quests that help me practise communication, curiosity,
+            and consistency.
+          </p>
+        </div>
+
+        <div class="beyond-grid">
+          <article class="side-card">
+            <div class="side-art">
+              <span class="eyebrow">SIDE QUEST / 01 · PODCASTING</span>
+              <span class="art-title">THE<br>CONVERSATION.</span>
+            </div>
+            <div class="side-content">
+              <h3>The Daksh Mavani Show</h3>
+              <p>
+                I host conversations with people whose experiences and ideas
+                can teach us something. Creating the show is also a hands-on
+                education in research, interviewing, storytelling, and
+                publishing consistently.
+              </p>
+              <!-- Replace this with your actual YouTube channel URL. -->
+              <a class="link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Watch the show ↗</a>
+            </div>
+          </article>
+
+          <article class="side-card">
+            <div class="side-art running-art">
+              <span class="eyebrow">SIDE QUEST / 02 · RUNNING</span>
+              <span class="art-title">ONE MORE<br>KILOMETRE.</span>
+            </div>
+            <div class="side-content">
+              <h3>Progress, one run at a time.</h3>
+              <p>
+                Distance running gives me another way to practise patience,
+                discipline, and consistency. I value the process: show up,
+                follow the plan, recover, and come back ready to learn.
+              </p>
+              <a class="link" href="#contact">Let's talk running ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CURRENT FOCUS -->
+    <section class="now">
+      <div class="wrap now-inner">
+        <p class="eyebrow">05 / RIGHT NOW</p>
+        <div>
+          <h2>Currently focused on <em>the fundamentals.</em></h2>
+          <p>
+            Deepening my RTL and SystemVerilog skills, practising verification,
+            and documenting what I learn. Outside engineering, I'm developing
+            the podcast and working to stay consistent with running.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT -->
+    <section class="contact wrap" id="contact">
+      <p class="eyebrow">06 / YOUR TURN</p>
+      <h2>Good work starts<br>with a <em>conversation.</em></h2>
+      <p>
+        Interested in digital design, verification, open-source hardware,
+        podcast conversations, or running? I'd be glad to connect.
+      </p>
+
+      <div class="actions">
+        <!-- IMPORTANT: replace this placeholder with your real email. -->
+        <a class="button" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a>
+        <!-- Replace with your actual LinkedIn profile. -->
+        <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a class="link" href="https://github.com/DaxMavani" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <a class="logo" href="#home">DM<span>.</span></a>
+    <p>Built with curiosity. Updated as I grow.</p>
+    <a href="#home">BACK TO TOP ↑</a>
+    <p>© <span id="year">2026</span> DAKSH MAVANI</p>
+  </footer>
+
+  <script>
+    // Keep the copyright year current.
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
