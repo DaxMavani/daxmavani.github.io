@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f4f1e9">
-  <meta name="description" content="Daksh Mavani — ECE engineer in the making, focused on VLSI, design verification, podcasting and running.">
-  <title>Daksh Mavani | Engineer, Creator, Runner</title>
+  <meta name="description" content="Daksh Mavani — ECE student focused on RTL design and FPGA implementation. Systolic array accelerator, RISC-V SoC peripherals, podcasting and running.">
+  <title>Daksh Mavani | RTL Design Engineer, Creator, Runner</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,10 +24,7 @@
 
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 85px;
-    }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
 
     body {
       margin: 0;
@@ -40,29 +36,14 @@
 
     a { color: inherit; text-decoration: none; }
 
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid #477db5;
-      outline-offset: 4px;
-    }
+    a:focus-visible, button:focus-visible { outline: 3px solid #477db5; outline-offset: 4px; }
 
-    .wrap {
-      width: min(1100px, calc(100% - 44px));
-      margin: auto;
-    }
+    .wrap { width: min(1100px, calc(100% - 44px)); margin: auto; }
 
-    .mono, .eyebrow {
-      font-family: var(--mono);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .eyebrow {
-      color: var(--blue);
-      font-size: 10px;
-    }
+    .mono, .eyebrow { font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .eyebrow { color: var(--blue); font-size: 10px; }
 
     /* NAVIGATION */
-
     header {
       min-height: 76px;
       padding: 15px max(22px, calc((100vw - 1100px) / 2));
@@ -73,31 +54,14 @@
       gap: 20px;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: -2px;
-    }
-
+    .logo { font-size: 25px; font-weight: 800; letter-spacing: -2px; }
     .logo span { color: var(--blue); }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
+    nav { display: flex; align-items: center; gap: 27px; font-size: 12px; font-weight: 700; }
     nav a:hover, .link:hover { color: var(--blue); }
-
-    .nav-contact {
-      border: 1px solid #b7b8b8;
-      padding: 8px 12px;
-    }
+    .nav-contact { border: 1px solid #b7b8b8; padding: 8px 12px; }
 
     /* INTRODUCTION */
-
     .hero {
       min-height: 620px;
       padding-top: 75px;
@@ -115,25 +79,11 @@
       margin: 25px 0;
     }
 
-    h1 span, h2 em {
-      font-family: Georgia, serif;
-      font-weight: 400;
-      color: var(--blue);
-    }
+    h1 span, h2 em { font-family: Georgia, serif; font-weight: 400; color: var(--blue); }
 
-    .hero-description {
-      color: var(--muted);
-      font-size: 14px;
-      max-width: 570px;
-    }
+    .hero-description { color: var(--muted); font-size: 14px; max-width: 570px; }
 
-    .actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 23px;
-      margin-top: 30px;
-    }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 23px; margin-top: 30px; }
 
     .button {
       display: inline-block;
@@ -146,12 +96,7 @@
 
     .button:hover { background: #102d4d; }
 
-    .link {
-      border-bottom: 1px solid #b7b8b8;
-      padding-bottom: 4px;
-      font-size: 12px;
-      font-weight: 700;
-    }
+    .link { border-bottom: 1px solid #b7b8b8; padding-bottom: 4px; font-size: 12px; font-weight: 700; }
 
     .hero-note {
       margin-top: 42px;
@@ -165,38 +110,11 @@
       aspect-ratio: 4 / 5;
       background: #e4e0d5;
       border: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       overflow: hidden;
       position: relative;
     }
 
-    .portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-    }
-
-    .portrait-placeholder {
-      color: var(--blue);
-      padding: 25px;
-    }
-
-    .portrait-placeholder strong {
-      display: block;
-      font-size: 85px;
-      letter-spacing: -9px;
-      line-height: 1.2;
-    }
-
-    .portrait-placeholder small {
-      font: 10px var(--mono);
-      line-height: 2;
-    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
 
     .portrait-caption {
       position: absolute;
@@ -210,25 +128,12 @@
     }
 
     /* INTRO STRIP */
-
-    .strip {
-      background: var(--soft);
-      border-block: 1px solid var(--line);
-      padding: 25px 0;
-    }
-
-    .strip-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
+    .strip { background: var(--soft); border-block: 1px solid var(--line); padding: 25px 0; }
+    .strip-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
     .strip p { margin: 0; font-size: 14px; }
     .strip strong { color: var(--blue); }
 
     /* SHARED SECTION STYLES */
-
     .section { padding-top: 95px; padding-bottom: 95px; }
 
     .section-heading {
@@ -239,21 +144,11 @@
       margin-bottom: 45px;
     }
 
-    h2 {
-      font-size: clamp(35px, 4vw, 49px);
-      line-height: 1.2;
-      letter-spacing: -.06em;
-      margin: 12px 0 0;
-    }
+    h2 { font-size: clamp(35px, 4vw, 49px); line-height: 1.2; letter-spacing: -.06em; margin: 12px 0 0; }
 
-    .summary {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
-    }
+    .summary { font-size: 13px; color: var(--muted); margin: 0; }
 
     /* ENGINEERING PROJECTS */
-
     .project {
       display: grid;
       grid-template-columns: 45px 1fr 35px;
@@ -264,30 +159,15 @@
 
     .project:last-child { border-bottom: 1px solid var(--line); }
 
-    .number {
-      font: 11px var(--mono);
-      color: var(--blue);
-    }
+    .number { font: 11px var(--mono); color: var(--blue); }
 
-    .project-type {
-      color: var(--muted);
-      font: 9px var(--mono);
-      letter-spacing: .08em;
-    }
+    .project-type { color: var(--muted); font: 9px var(--mono); letter-spacing: .08em; }
 
     h3 { line-height: 1.35; }
 
-    .project h3 {
-      font-size: 21px;
-      margin: 8px 0;
-      letter-spacing: -.04em;
-    }
+    .project h3 { font-size: 21px; margin: 8px 0; letter-spacing: -.04em; }
 
-    .project p:not(.project-type) {
-      max-width: 720px;
-      font-size: 12px;
-      color: var(--muted);
-    }
+    .project p:not(.project-type) { max-width: 720px; font-size: 12px; color: var(--muted); }
 
     .tags { display: flex; flex-wrap: wrap; gap: 7px; }
 
@@ -299,45 +179,22 @@
       color: #35475b;
     }
 
-    .project-arrow {
-      color: var(--blue);
-      font-size: 22px;
-    }
+    .project-arrow { color: var(--blue); font-size: 22px; }
 
-    .note {
-      color: var(--muted);
-      font-size: 10px;
-      margin-top: 16px;
-    }
+    .note { color: var(--muted); font-size: 10px; margin-top: 16px; }
 
     /* SKILLS */
-
-    .skills {
-      background: var(--blue);
-      color: var(--paper);
-      padding: 75px 0;
-    }
-
+    .skills { background: var(--blue); color: var(--paper); padding: 75px 0; }
     .skills .eyebrow { color: #c6d8e9; }
     .skills h2 em { color: #c6d8e9; }
 
-    .skills-grid {
-      margin-top: 35px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
+    .skills-grid { margin-top: 35px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
 
-    .skill {
-      border-top: 1px solid #66809a;
-      padding-top: 15px;
-    }
-
+    .skill { border-top: 1px solid #66809a; padding-top: 15px; }
     .skill h3 { font-size: 14px; margin: 7px 0; }
     .skill p { font-size: 12px; color: #d1d8df; margin: 0; }
 
-    /* BACKGROUND & MILESTONES */
-
+    /* EXPERIENCE & MILESTONES */
     .milestone {
       display: grid;
       grid-template-columns: 125px 1fr;
@@ -348,28 +205,20 @@
 
     .milestone:last-child { border-bottom: 1px solid var(--line); }
 
-    .milestone-label {
-      font: 10px var(--mono);
-      color: var(--blue);
-    }
+    .milestone-label { font: 10px var(--mono); color: var(--blue); }
 
-    .milestone h3 { margin: 0 0 7px; font-size: 16px; }
+    .milestone h3 { margin: 0 0 4px; font-size: 16px; }
+    .milestone .org { margin: 0 0 8px; font: 10px var(--mono); color: var(--blue); letter-spacing: .04em; }
     .milestone p { margin: 0; font-size: 12px; color: var(--muted); }
+    .milestone ul { margin: 0; padding-left: 18px; font-size: 12px; color: var(--muted); }
+    .milestone li { margin-bottom: 6px; }
 
     /* BEYOND ENGINEERING */
-
     .beyond { background: var(--soft); border-block: 1px solid var(--line); }
 
-    .beyond-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
+    .beyond-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 
-    .side-card {
-      border: 1px solid var(--line);
-      background: var(--paper);
-    }
+    .side-card { border: 1px solid var(--line); background: var(--paper); }
 
     .side-art {
       min-height: 205px;
@@ -381,11 +230,7 @@
       justify-content: space-between;
     }
 
-    .side-art.running-art {
-      background: #c8d3da;
-      color: var(--ink);
-    }
-
+    .side-art.running-art { background: #c8d3da; color: var(--ink); }
     .side-art .eyebrow { color: #d7e5f3; }
     .running-art .eyebrow { color: var(--blue); }
 
@@ -401,25 +246,13 @@
     .side-content p:not(.eyebrow) { color: var(--muted); font-size: 12px; }
 
     /* CURRENT FOCUS */
-
-    .now {
-      padding: 65px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .now-inner {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 35px;
-    }
-
+    .now { padding: 65px 0; border-bottom: 1px solid var(--line); }
+    .now-inner { display: grid; grid-template-columns: 160px 1fr; gap: 35px; }
     .now h2 { font-size: 34px; margin: 0 0 12px; }
     .now p:not(.eyebrow) { color: var(--muted); font-size: 12px; }
 
     /* CONTACT */
-
     .contact { padding-top: 95px; padding-bottom: 100px; }
-
     .contact h2 { font-size: clamp(43px, 6vw, 70px); }
     .contact > p:not(.eyebrow) { max-width: 530px; color: var(--muted); font-size: 13px; }
 
@@ -437,27 +270,18 @@
     footer p { margin: 0; }
 
     /* MOBILE LAYOUT */
-
     @media (max-width: 700px) {
       header { padding: 17px 22px; align-items: flex-start; }
       nav { gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
       nav a { font-size: 10px; }
       .nav-contact { padding: 5px 7px; }
 
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding-top: 50px;
-        padding-bottom: 55px;
-      }
-
+      .hero { grid-template-columns: 1fr; gap: 35px; padding-top: 50px; padding-bottom: 55px; }
       .portrait { max-width: 430px; width: 100%; margin: auto; }
       .hero-note { margin-top: 30px; }
 
       .section { padding-top: 70px; padding-bottom: 70px; }
-
       .section-heading { grid-template-columns: 1fr; gap: 15px; }
-
       .strip-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
 
       .project { grid-template-columns: 25px 1fr; gap: 12px; }
@@ -465,11 +289,8 @@
       .project h3 { font-size: 18px; }
 
       .skills-grid { gap: 22px 16px; }
-
       .milestone { grid-template-columns: 1fr; gap: 7px; }
-
       .beyond-grid { grid-template-columns: 1fr; }
-
       .now-inner { grid-template-columns: 1fr; gap: 12px; }
       .now h2 { font-size: 30px; }
 
@@ -483,9 +304,7 @@
       .actions { gap: 15px; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 
@@ -494,7 +313,8 @@
     <a class="logo" href="#home">DM<span>.</span></a>
 
     <nav aria-label="Main navigation">
-      <a href="#engineering">Engineering</a>
+      <a href="#experience">Experience</a>
+      <a href="#engineering">Projects</a>
       <a href="#about">About</a>
       <a href="#beyond">Beyond the lab</a>
       <a class="nav-contact" href="#contact">Contact ↗</a>
@@ -511,9 +331,9 @@
 
         <p class="hero-description">
           I'm Daksh Mavani — an Electronics and Communication Engineering
-          student focused on VLSI and design verification. I enjoy understanding
-          how systems work, building things that test that understanding, and
-          sharing what I learn along the way.
+          student focused on RTL design and FPGA implementation. I design
+          datapaths, FSMs, and SoC peripherals in Verilog and SystemVerilog,
+          and take them through synthesis, timing, and onto real hardware.
         </p>
 
         <div class="actions">
@@ -521,19 +341,12 @@
           <a class="link" href="#contact">Let's connect ↗</a>
         </div>
 
-        <p class="hero-note">RTL DESIGN · VERIFICATION · CONTINUOUS LEARNING</p>
+        <p class="hero-note">RTL DESIGN · FPGA · TIMING &amp; SYNTHESIS</p>
       </div>
 
-    
-<div class="portrait">
-  <img src="assests/images/WhatsApp Image 2026-10-17 at 10.52.34 AM.jpeg"
-       alt="Portrait of Daksh Mavani">
-  <div class="portrait-caption">
-    DAKSH MAVANI · ENGINEER / CREATOR / RUNNER
-  </div>
-</div>
-
-        <!-- Optional: add your photo later; instructions below. -->
+      <div class="portrait">
+        <img src="assests/images/WhatsApp Image 2026-10-17 at 10.52.34 AM.jpeg"
+             alt="Portrait of Daksh Mavani">
         <div class="portrait-caption">DAKSH MAVANI · ENGINEER / CREATOR / RUNNER</div>
       </div>
     </section>
@@ -541,134 +354,192 @@
     <section class="strip">
       <div class="wrap strip-inner">
         <p class="eyebrow">THE DIRECTION</p>
-        <p>Working toward a career in <strong>VLSI design verification</strong> through fundamentals, hands-on practice, and curiosity.</p>
+        <p>Working toward a career in <strong>RTL design</strong> through hands-on builds, timing-aware design, and curiosity.</p>
       </div>
     </section>
 
-    <!-- 2. ENGINEERING PROJECTS -->
-    <section class="section wrap" id="engineering">
+    <!-- 2. EXPERIENCE -->
+    <section class="section wrap" id="experience">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">01 / THE MAIN THREAD</p>
+          <p class="eyebrow">01 / THE WORK SO FAR</p>
+          <h2>Experience <em>in RTL.</em></h2>
+        </div>
+        <p class="summary">
+          Two 2026 internships, one on an AI accelerator datapath and one on
+          a RISC-V SoC, both implemented on iCE40 FPGAs with open-source tools.
+        </p>
+      </div>
+
+      <article class="milestone">
+        <span class="milestone-label">2026</span>
+        <div>
+          <h3>AI Accelerator RTL Design Intern</h3>
+          <p class="org">KLE TECHNOLOGICAL UNIVERSITY · TECHXCELERATE 2026 · BELAGAVI</p>
+          <ul>
+            <li>Designed a 4x4 weight-stationary systolic array (signed INT8 inputs, 32-bit accumulation) in SystemVerilog with parameterized modules for the PE, PE array, weight loader, activation skew, output collector, and control FSM.</li>
+            <li>Pipelined multiply-accumulate datapath with diagonal activation skew and FSM-controlled preload, compute, and drain phases; one 4x4 multiply completes in 18 clock cycles (1.5 µs at 12 MHz).</li>
+            <li>Implemented on iCE40UP5K (VSDSquadron FPGA Mini) with Yosys and nextpnr at 12 MHz, with a UART interface, power-on reset, and cycle counter; 16 multipliers mapped to LUTs since the array exceeds the 8 DSP blocks.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="milestone">
+        <span class="milestone-label">2026</span>
+        <div>
+          <h3>RISC-V SoC and FPGA IP Development Intern</h3>
+          <p class="org">VLSI SYSTEM DESIGN (VSD) · VIRTUAL</p>
+          <ul>
+            <li>Designed and integrated 3 memory-mapped peripheral IPs (GPIO, Multi-Register GPIO, PWM) into a custom 32-bit RISC-V SoC in Verilog RTL, with 8+ control, status, and data registers and SoC-level address decoding.</li>
+            <li>Achieved timing closure at 20.34 MHz across CPU, memory, UART, GPIO, and PWM subsystems; 1,638 logic cells (31% utilization) and 16 BRAM blocks on iCE40UP5K.</li>
+            <li>Debugged bring-up issues (reset sequencing, MMIO errors, memory initialization, pin conflicts) and validated peripherals with C firmware and UART tests.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. PROJECTS -->
+    <section class="section wrap" id="engineering" style="padding-top:0">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / THE MAIN THREAD</p>
           <h2>Engineering <em>in practice.</em></h2>
         </div>
         <p class="summary">
-          My focus is digital hardware, RTL design, verification, and
-          understanding open-source silicon workflows. This section will grow
-          as I document more projects and results.
+          Digital hardware built end to end: RTL, simulation, synthesis,
+          place-and-route, and validation on real boards.
         </p>
       </div>
 
       <article class="project">
         <span class="number">01</span>
         <div>
-          <p class="project-type">RTL DESIGN / VERIFICATION</p>
-          <h3>Configurable FIFO Buffer</h3>
+          <p class="project-type">RTL DESIGN / FPGA · 2026–2027</p>
+          <h3>Design and Verification of a 4x4 Systolic Array on VSDSquadron FPGA Mini</h3>
           <p>
-            A digital-design project exploring FIFO behaviour, RTL simulation,
-            gate-level verification, and SystemVerilog assertions.
+            A 4x4 INT8 matrix multiplier (C = A x W, 32-bit accumulation) deployed
+            on iCE40UP5K with a UART host interface. Checked with self-checking
+            testbenches at PE, array, and top level, a cycle-accurate Python golden
+            model, and on-board tests against NumPy. Phase 2 (planned): a larger
+            parameterized array, SB_MAC16 DSP mapping, and continuous matrix streaming.
           </p>
           <div class="tags">
-            <span>Verilog</span><span>SystemVerilog</span><span>SVA</span>
+            <span>SystemVerilog</span><span>Python</span><span>Yosys</span><span>nextpnr</span><span>iCE40UP5K</span>
           </div>
         </div>
-        <a class="project-arrow" href="https://github.com/DaxMavani/Configurable-FIFO-Buffer" aria-label="GitHub profile">↗</a>
+        <a class="project-arrow" href="https://github.com/DaxMavani" aria-label="GitHub profile">↗</a>
       </article>
 
       <article class="project">
         <span class="number">02</span>
         <div>
-          <p class="project-type">OPEN-SOURCE SILICON</p>
-          <h3>50 Days of Verilog Code</h3>
+          <p class="project-type">RTL DESIGN / ASIC FLOW · 2026</p>
+          <h3>Configurable FIFO Buffer</h3>
           <p>
-            Completed the course thorugh namaste fpga, where 50 days
-            of code has been completed.
+            A parameterized synchronous FIFO (8-bit x 16-depth) with read/write pointer
+            logic, full/empty/overflow flags, and back-pressure handling. Synthesized
+            with Yosys (364 logic cells) and confirmed through gate-level simulation.
           </p>
           <div class="tags">
-            <span>RISC-V</span><span>OpenROAD</span><span>Linux</span>
+            <span>Verilog</span><span>Icarus Verilog</span><span>GTKWave</span><span>Yosys</span>
+          </div>
+        </div>
+        <a class="project-arrow" href="https://github.com/DaxMavani/Configurable-FIFO-Buffer" aria-label="Configurable FIFO Buffer on GitHub">↗</a>
+      </article>
+
+      <article class="project">
+        <span class="number">03</span>
+        <div>
+          <p class="project-type">FPGA / FSM DESIGN · 2026</p>
+          <h3>Smart Parking Controller</h3>
+          <p>
+            A modular 4-slot parking system built from FSM-driven RTL with occupancy
+            detection and 7-segment display interfacing. Implemented in Vivado
+            (4 Slice LUTs, 1 register) and validated on Nexys4 DDR. 2nd place at a
+            36-hour national VLSI hackathon.
+          </p>
+          <div class="tags">
+            <span>Verilog</span><span>Vivado</span><span>Nexys4 DDR</span><span>Artix-7</span>
           </div>
         </div>
         <a class="project-arrow" href="https://github.com/DaxMavani" aria-label="GitHub profile">↗</a>
       </article>
 
       <article class="project">
-        <span class="number">03</span>
+        <span class="number">04</span>
         <div>
-          <p class="project-type">VERIFICATION PRACTICE</p>
-          <h3>SystemVerilog Learning Lab</h3>
+          <p class="project-type">LEARNING / PRACTICE</p>
+          <h3>50 Days of Verilog</h3>
           <p>
-            A growing collection of exercises and notes on testbenches,
-            assertions, simulation, debugging, and verification concepts.
+            Completed the 50-day Verilog coding course from Namaste FPGA,
+            building up from combinational and sequential basics.
           </p>
           <div class="tags">
-            <span>SystemVerilog</span><span>Testbenches</span><span>Debugging</span>
+            <span>Verilog</span><span>FPGA</span><span>Digital Design</span>
           </div>
         </div>
         <a class="project-arrow" href="https://github.com/DaxMavani" aria-label="GitHub profile">↗</a>
       </article>
-
-      <p class="note">
-        These are starting descriptions. Before publishing, link each item to
-        the exact repository and ensure the wording matches the work completed.
-      </p>
     </section>
 
-    <!-- 3. SKILLS -->
+    <!-- 4. SKILLS -->
     <section class="skills">
       <div class="wrap">
-        <p class="eyebrow">02 / THE TOOLKIT</p>
+        <p class="eyebrow">03 / THE TOOLKIT</p>
         <h2>Foundations first.<br><em>Then depth.</em></h2>
 
         <div class="skills-grid">
           <div class="skill">
             <p class="eyebrow">01</p>
-            <h3>HDLs & RTL</h3>
-            <p>Verilog · SystemVerilog</p>
+            <h3>Languages</h3>
+            <p>Verilog · SystemVerilog · C · Python</p>
           </div>
           <div class="skill">
             <p class="eyebrow">02</p>
-            <h3>Verification</h3>
-            <p>Testbenches · SVA · Simulation · Debugging</p>
+            <h3>RTL design</h3>
+            <p>Microarchitecture · FSM · Datapath · Pipelining · Parameterized design · FIFO · UART · MMIO · RISC-V</p>
           </div>
           <div class="skill">
             <p class="eyebrow">03</p>
-            <h3>Engineering foundations</h3>
-            <p>Digital logic · Electronics · Computer architecture</p>
+            <h3>Timing &amp; synthesis</h3>
+            <p>Static timing analysis · Timing closure · Setup/hold · Clock domain concepts · Synthesis</p>
           </div>
           <div class="skill">
             <p class="eyebrow">04</p>
-            <h3>Tools & workflows</h3>
-            <p>Git · Linux · Open-source EDA tools</p>
+            <h3>Tools &amp; platforms</h3>
+            <p>Vivado · Yosys · nextpnr · OpenSTA · Icarus Verilog · GTKWave · Linux · Nexys4 DDR · iCE40UP5K</p>
           </div>
         </div>
-
-        <p class="note" style="color:#d1d8df">
-          Skills reflect my learning and practice. I'll update this section as
-          I gain more hands-on experience.
-        </p>
       </div>
     </section>
 
-    <!-- 4. BACKGROUND -->
+    <!-- 5. BACKGROUND -->
     <section class="section wrap" id="about">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">03 / THE BACKGROUND</p>
+          <p class="eyebrow">04 / THE BACKGROUND</p>
           <h2>The journey <em>so far.</em></h2>
         </div>
         <p class="summary">
           I'm studying Electronics and Communication Engineering at
-          St. Martin's Engineering College in Hyderabad. My goal is to
-          strengthen my digital design and verification skills through
-          practical work and consistent learning.
+          St. Martin's Engineering College in Hyderabad, building RTL design
+          skills through projects, internships, and consistent practice.
         </p>
       </div>
 
       <article class="milestone">
         <span class="milestone-label">EDUCATION</span>
         <div>
-          <h3>B.Tech — Electronics & Communication Engineering</h3>
-          <p>St. Martin's Engineering College, Hyderabad · R22 regulation. Expected graduation: June 2027.</p>
+          <h3>B.Tech — Electronics &amp; Communication Engineering</h3>
+          <p>St. Martin's Engineering College, Hyderabad · 2023–2027 · CGPA 7.45 / 10.</p>
+        </div>
+      </article>
+
+      <article class="milestone">
+        <span class="milestone-label">ACHIEVEMENT</span>
+        <div>
+          <h3>2nd Place — National VLSI Hackathon (36-hour)</h3>
+          <p>Designed and deployed a Smart Parking Controller on an Artix-7 FPGA; recognized for RTL optimization and implementation quality.</p>
         </div>
       </article>
 
@@ -676,11 +547,7 @@
         <span class="milestone-label">CERTIFICATION</span>
         <div>
           <h3>System Design with Verilog — NPTEL</h3>
-          <p>
-            Completed the course by Prof. Shaik Rafi Ahamed of IIT Guwahati.
-            Certificate reported as 65%, Elite category. Add your certificate
-            link if you want visitors to verify it.
-          </p>
+          <p>Course by Prof. Shaik Rafi Ahamed of IIT Guwahati. Scored 65%, Elite category.</p>
         </div>
       </article>
 
@@ -688,22 +555,17 @@
         <span class="milestone-label">LEADERSHIP</span>
         <div>
           <h3>IEEE student activities</h3>
-          <p>
-            Involved in IEEE student-branch and Circuits and Systems Society
-            chapter planning, with technical-event ideas around VLSI,
-            embedded systems, and IoT. Add your exact title, dates, and
-            completed activities before publishing.
-          </p>
+          <p>Involved in IEEE student-branch and Circuits and Systems Society chapter planning, with technical-event ideas around VLSI, embedded systems, and IoT.</p>
         </div>
       </article>
     </section>
 
-    <!-- 5. PODCAST & RUNNING -->
+    <!-- 6. PODCAST & RUNNING -->
     <section class="beyond" id="beyond">
       <div class="section wrap">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">04 / OUTSIDE THE LAB</p>
+            <p class="eyebrow">05 / OUTSIDE THE LAB</p>
             <h2>Other ways I <em>learn.</em></h2>
           </div>
           <p class="summary">
@@ -727,7 +589,6 @@
                 education in research, interviewing, storytelling, and
                 publishing consistently.
               </p>
-              <!-- Replace this with your actual YouTube channel URL. -->
               <a class="link" href="https://www.youtube.com/channel/UCWss2khawdvTY0Bbme19VkA" target="_blank" rel="noopener noreferrer">Explore the channel ↗</a>
             </div>
           </article>
@@ -751,34 +612,33 @@
       </div>
     </section>
 
-    <!-- 6. CURRENT FOCUS -->
+    <!-- 7. CURRENT FOCUS -->
     <section class="now">
       <div class="wrap now-inner">
-        <p class="eyebrow">05 / RIGHT NOW</p>
+        <p class="eyebrow">06 / RIGHT NOW</p>
         <div>
-          <h2>Currently focused on <em>the fundamentals.</em></h2>
+          <h2>Currently focused on <em>scaling the array.</em></h2>
           <p>
-            Deepening my RTL and SystemVerilog skills, practising verification,
-            and documenting what I learn. Outside engineering, I'm developing
-            the podcast and working to stay consistent with running.
+            Planning Phase 2 of the systolic array: a larger parameterized design,
+            DSP-block multipliers, and continuous matrix streaming for higher
+            utilization. Outside engineering, I'm developing the podcast and
+            staying consistent with running.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 7. CONTACT -->
+    <!-- 8. CONTACT -->
     <section class="contact wrap" id="contact">
-      <p class="eyebrow">06 / YOUR TURN</p>
+      <p class="eyebrow">07 / YOUR TURN</p>
       <h2>Good work starts<br>with a <em>conversation.</em></h2>
       <p>
-        Interested in digital design, verification, open-source hardware,
+        Interested in RTL design, FPGA implementation, open-source hardware,
         podcast conversations, or running? I'd be glad to connect.
       </p>
 
       <div class="actions">
-        <!-- IMPORTANT: replace this placeholder with your real email. -->
         <a class="button" href="mailto:dakshworkz@gmail.com">Email me ↗</a>
-        <!-- Replace with your actual LinkedIn profile. -->
         <a class="link" href="https://www.linkedin.com/in/daksh-mavani/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         <a class="link" href="https://github.com/DaxMavani" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
@@ -793,7 +653,6 @@
   </footer>
 
   <script>
-    // Keep the copyright year current.
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
